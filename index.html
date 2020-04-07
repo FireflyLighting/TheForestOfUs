@@ -8,27 +8,60 @@
 <iframe id="video" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <button id="nextButton">Next</button>
-
-
-
+<p id="HAH"></p><br>
+<p id="HAA"></p><br>
+<p id="AAA"></p>
 
 <script>
-var allTrees = ["https://www.youtube.com/embed/ei63l74d2SU?controls=0","https://www.youtube.com/embed/UA6Aku10nPo?controls=0","https://www.youtube.com/embed/espl4s36T3I?controls=0","https://www.youtube.com/embed/aTcj3Q2Y6Bk?controls=0","https://www.youtube.com/embed/e9dKQtpbP6o?controls=0","https://www.youtube.com/embed/qiEqirYypZs?controls=0","https://www.youtube.com/embed/wNHdZeucb9g?controls=0","https://www.youtube.com/embed/OOHk1gULkMM?controls=0","https://www.youtube.com/embed/CeHxIjr0xIw?controls=0","https://www.youtube.com/embed/GmoVQi6kg7k?controls=0","https://www.youtube.com/embed/kbbUTOujKZA?controls=0","https://www.youtube.com/embed/coNJ3lEisHM?controls=0","https://www.youtube.com/embed/alU8maHouhA?controls=0","https://www.youtube.com/embed/-yEXN7-vt00?controls=0","https://www.youtube.com/embed/Ip46WP_kKtM?controls=0","https://www.youtube.com/embed/MgqScB8Mzvw?controls=0","https://www.youtube.com/embed/IypPSDdF-3c?controls=0","https://www.youtube.com/embed/opxDgcVkcvE?controls=0","https://www.youtube.com/embed/UeAFwfgOBbs?controls=0","https://www.youtube.com/embed/cOtVZwhz1cg?controls=0","https://www.youtube.com/embed/eaBGpcKDs3g?controls=0","https://www.youtube.com/embed/oCPFDze0L8c?controls=0","https://www.youtube.com/embed/QRQLne4RNUw?controls=0","https://www.youtube.com/embed/DCfCVsusK5M?controls=0","https://www.youtube.com/embed/osgijZULgUo?controls=0"]
+var watchCount = 1;
+var watchedVideos = {};
+var tree = "";
+var treeCount = 0;
+var notAgain = -100;
+var check = 3;
+
+
+var allTrees = ["https://www.youtube.com/embed/xNN7iTA57jM?controls=0","https://www.youtube.com/embed/ei63l74d2SU?controls=0","https://www.youtube.com/embed/UA6Aku10nPo?controls=0","https://www.youtube.com/embed/espl4s36T3I?controls=0","https://www.youtube.com/embed/aTcj3Q2Y6Bk?controls=0","https://www.youtube.com/embed/e9dKQtpbP6o?controls=0","https://www.youtube.com/embed/qiEqirYypZs?controls=0","https://www.youtube.com/embed/wNHdZeucb9g?controls=0","https://www.youtube.com/embed/OOHk1gULkMM?controls=0","https://www.youtube.com/embed/CeHxIjr0xIw?controls=0","https://www.youtube.com/embed/GmoVQi6kg7k?controls=0","https://www.youtube.com/embed/kbbUTOujKZA?controls=0","https://www.youtube.com/embed/coNJ3lEisHM?controls=0","https://www.youtube.com/embed/alU8maHouhA?controls=0","https://www.youtube.com/embed/-yEXN7-vt00?controls=0","https://www.youtube.com/embed/Ip46WP_kKtM?controls=0","https://www.youtube.com/embed/MgqScB8Mzvw?controls=0","https://www.youtube.com/embed/IypPSDdF-3c?controls=0","https://www.youtube.com/embed/opxDgcVkcvE?controls=0","https://www.youtube.com/embed/UeAFwfgOBbs?controls=0","https://www.youtube.com/embed/cOtVZwhz1cg?controls=0","https://www.youtube.com/embed/eaBGpcKDs3g?controls=0","https://www.youtube.com/embed/oCPFDze0L8c?controls=0","https://www.youtube.com/embed/QRQLne4RNUw?controls=0","https://www.youtube.com/embed/DCfCVsusK5M?controls=0","https://www.youtube.com/embed/osgijZULgUo?controls=0"]
+
 function nextVideo(){
-var treeCount = Math.floor(Math.random() * allTrees.length)
+document.getElementById("AAA").innerHTML = notAgain;
+	while (tree in watchedVideos || !watchCount && !tree) {
+  	 	treeCount = Math.floor(Math.random() * (allTrees.length -1))+1
+   		tree = allTrees[treeCount]
+		}
+	if (treeCount == notAgain){
+		treeCount = Math.floor(Math.random() * (allTrees.length -1))+1}
+	if (treeCount == notAgain){
+		treeCount = Math.floor(Math.random() * (allTrees.length -1))+1}
+	if (treeCount == notAgain){
+		treeCount = Math.floor(Math.random() * (allTrees.length -1))+1}
+	var element = document.getElementById("video")
+	element.src = tree
+	watchedVideos[tree] = 1
+	watchCount++
+	var tree = allTrees[treeCount]
 
 
 
+	element.src = tree
+	console.log (tree)
+if (watchCount == check){
+	notAgain = treeCount;}
 
-
- 
-var tree = allTrees[treeCount]
-
-
-var element = document.getElementById("video")
-
-element.src = tree
-console.log (tree)
+if (watchCount == 17){
+	element.src = "https://www.youtube.com/embed/xNN7iTA57jM?controls=0"
+	document.getElementById("nextButton").innerHTML = "Take Another Walk"
+	 watchCount = 1;
+ 	 watchedVideos = {};
+	 notAgain = 0;
+	 tree = "";
+	check = 2;
+	}
+document.getElementById("HAH").innerHTML = watchCount;
+document.getElementById("HAA").innerHTML = treeCount;
+if (watchCount == 2){
+	document.getElementById("nextButton").innerHTML = "Next"
+}
 }
 nextVideo()
 
