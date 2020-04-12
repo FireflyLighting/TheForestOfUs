@@ -11,8 +11,12 @@
 <p id="HAH"></p><br>
 <p id="HAA"></p><br>
 <p id="AAA"></p>
-
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
+
+
+
+
 var watchCount = 1;
 var watchedVideos = {};
 var tree = "";
@@ -21,13 +25,19 @@ var notAgain = -100;
 var check = 3;
 
 
-var allTrees = ["https://www.youtube.com/embed/xNN7iTA57jM?controls=0","https://www.youtube.com/embed/ei63l74d2SU?controls=0","https://www.youtube.com/embed/UA6Aku10nPo?controls=0","https://www.youtube.com/embed/espl4s36T3I?controls=0","https://www.youtube.com/embed/aTcj3Q2Y6Bk?controls=0","https://www.youtube.com/embed/e9dKQtpbP6o?controls=0","https://www.youtube.com/embed/qiEqirYypZs?controls=0","https://www.youtube.com/embed/wNHdZeucb9g?controls=0","https://www.youtube.com/embed/OOHk1gULkMM?controls=0","https://www.youtube.com/embed/CeHxIjr0xIw?controls=0","https://www.youtube.com/embed/GmoVQi6kg7k?controls=0","https://www.youtube.com/embed/kbbUTOujKZA?controls=0","https://www.youtube.com/embed/coNJ3lEisHM?controls=0","https://www.youtube.com/embed/alU8maHouhA?controls=0","https://www.youtube.com/embed/-yEXN7-vt00?controls=0","https://www.youtube.com/embed/Ip46WP_kKtM?controls=0","https://www.youtube.com/embed/MgqScB8Mzvw?controls=0","https://www.youtube.com/embed/IypPSDdF-3c?controls=0","https://www.youtube.com/embed/opxDgcVkcvE?controls=0","https://www.youtube.com/embed/UeAFwfgOBbs?controls=0","https://www.youtube.com/embed/cOtVZwhz1cg?controls=0","https://www.youtube.com/embed/eaBGpcKDs3g?controls=0","https://www.youtube.com/embed/oCPFDze0L8c?controls=0","https://www.youtube.com/embed/QRQLne4RNUw?controls=0","https://www.youtube.com/embed/DCfCVsusK5M?controls=0","https://www.youtube.com/embed/osgijZULgUo?controls=0"]
+var allTrees = ["https://www.youtube.com/embed/xNN7iTA57jM?enablejsapi=1","https://www.youtube.com/embed/ei63l74d2SU?enablejsapi=1","https://www.youtube.com/embed/UA6Aku10nPo?enablejsapi=1","https://www.youtube.com/embed/espl4s36T3I?enablejsapi=1","https://www.youtube.com/embed/aTcj3Q2Y6Bk?enablejsapi=1","https://www.youtube.com/embed/e9dKQtpbP6o?enablejsapi=1","https://www.youtube.com/embed/qiEqirYypZs?enablejsapi=1","https://www.youtube.com/embed/wNHdZeucb9g?enablejsapi=1","https://www.youtube.com/embed/OOHk1gULkMM?enablejsapi=1","https://www.youtube.com/embed/CeHxIjr0xIw?enablejsapi=1","https://www.youtube.com/embed/GmoVQi6kg7k?enablejsapi=1","https://www.youtube.com/embed/kbbUTOujKZA?enablejsapi=1","https://www.youtube.com/embed/coNJ3lEisHM?enablejsapi=1","https://www.youtube.com/embed/alU8maHouhA?enablejsapi=1","https://www.youtube.com/embed/-yEXN7-vt00?enablejsapi=1","https://www.youtube.com/embed/Ip46WP_kKtM?enablejsapi=1","https://www.youtube.com/embed/MgqScB8Mzvw?enablejsapi=1","https://www.youtube.com/embed/IypPSDdF-3c?enablejsapi=1","https://www.youtube.com/embed/opxDgcVkcvE?enablejsapi=1","https://www.youtube.com/embed/UeAFwfgOBbs?enablejsapi=1","https://www.youtube.com/embed/cOtVZwhz1cg?enablejsapi=1","https://www.youtube.com/embed/eaBGpcKDs3g?enablejsapi=1","https://www.youtube.com/embed/oCPFDze0L8c?enablejsapi=1","https://www.youtube.com/embed/QRQLne4RNUw?enablejsapi=1","https://www.youtube.com/embed/DCfCVsusK5M?enablejsapi=1","https://www.youtube.com/embed/osgijZULgUo?enablejsapi=1"]
+
+var allTreesId = ["xNN7iTA57jM","ei63l74d2SU","UA6Aku10nPo","espl4s36T3I","aTcj3Q2Y6Bk","e9dKQtpbP6o","qiEqirYypZs","wNHdZeucb9g","OOHk1gULkMM","CeHxIjr0xIw","GmoVQi6kg7k","kbbUTOujKZA","coNJ3lEisHM","alU8maHouhA","-yEXN7-vt00","Ip46WP_kKtM","MgqScB8Mzvw","IypPSDdF-3c","opxDgcVkcvE","UeAFwfgOBbs","cOtVZwhz1cg","eaBGpcKDs3g?","oCPFDze0L8c","QRQLne4RNUw","DCfCVsusK5M","osgijZULgUo"]
+
+	var element2 = document.getElementById("video")
+element2.src = allTrees[1]
+
 
 function nextVideo(){
 document.getElementById("AAA").innerHTML = notAgain;
 	while (tree in watchedVideos || !watchCount && !tree) {
   	 	treeCount = Math.floor(Math.random() * (allTrees.length -1))+1
-   		tree = allTrees[treeCount]
+   		tree = allTreesId[treeCount]
 		}
 	if (treeCount == notAgain){
 		treeCount = Math.floor(Math.random() * (allTrees.length -1))+1}
@@ -36,20 +46,20 @@ document.getElementById("AAA").innerHTML = notAgain;
 	if (treeCount == notAgain){
 		treeCount = Math.floor(Math.random() * (allTrees.length -1))+1}
 	var element = document.getElementById("video")
-	element.src = tree
+	//element.src = tree
 	watchedVideos[tree] = 1
 	watchCount++
-	var tree = allTrees[treeCount]
+	var tree = allTreesId[treeCount]
 
 
 
-	element.src = tree
+	//element.src = tree
 	console.log (tree)
 if (watchCount == check){
 	notAgain = treeCount;}
 
 if (watchCount == 17){
-	element.src = "https://www.youtube.com/embed/vsgdJfgjhj0?controls=0"
+	//element.src = "https://www.youtube.com/embed/xNN7iTA57jM?enablejsapi=1"
 	document.getElementById("nextButton").innerHTML = "Take Another Walk"
 	 watchCount = 1;
  	 watchedVideos = {};
@@ -62,8 +72,40 @@ document.getElementById("HAA").innerHTML = treeCount;
 if (watchCount == 2){
 	document.getElementById("nextButton").innerHTML = "Next"
 }
+return tree === "" ? "xNN7iTA57jM" : tree
 }
-nextVideo()
+var firstVid = nextVideo()
+
+var ik_player;
+window.onYouTubePlayerReady = function(event) {
+  console.log('Video is ready to play');
+  event.target.playVideo()
+}
+
+window.onYouTubePlayerStateChange = function(event) {
+  console.log(event.data)
+  console.log("State change")
+  if (event.data === YT.PlayerState.ENDED) {
+    var vidId = nextVideo()
+    console.log(vidId, "Loading")
+    event.target.cueVideoById(vidId, 0)
+
+  }
+if (event.data === YT.PlayerState.CUED) {
+    event.target.playVideo()
+
+  }
+}
+
+window.onYouTubeIframeAPIReady = function() {
+  ik_player = new YT.Player('video');
+       
+  console.log('Video API is loaded');
+       
+  ik_player.addEventListener("onReady",       "onYouTubePlayerReady");
+  ik_player.addEventListener("onStateChange", "onYouTubePlayerStateChange");
+}
+
 
 
 var anotherbutton = document.getElementById("nextButton")
