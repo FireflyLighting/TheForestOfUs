@@ -8,14 +8,13 @@
 <div class="bigger" style="background-color:rgba(255,255,255,0.7);">
   <div class="big">
 <h1 class="title">The Forest Of Us</h1>
-<button class="btton" id="nextButton">Start your Walk</button><br>
 <iframe class="video" id="video" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 <button class="btton" id="nextButton">Start your Walk</button>
 <div class="addvideo">
 <p> Hello! Do you want to join the forest? We'd love to have you! Joining is easy, take a video of telling your story, and however you want. Whatever that means to you is perfect. If you need a little more help with what to do check out the video below. <br>Once you have it finished, upload it to the google form below!</p>
 </div>
 <button class="btton" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSchf8e6HraOX2deggkWwtfVLY5FI7i6nRTb2chbtVGOyGXhag/viewform?usp=sf_link', '_blank');return false;">Upload Your Video Here</button>
-<div class="special thanks">
+<div class="specialthanks">
     <p>So many special thanks on this project, here are some highlights!<br>Thanks to James Loewen, Jordine De Guzman, and Leander Rodrigues for their help on building this excellent website!<br> A shout out for the <a href="https://www.freepik.com/free-photos-vectors/tree">Tree vector created by macrovector - www.freepik.com</a><br>A thanks to (in order of appearance) Joanna Tran, Ted Loewen, Samantha Rideout, Taylor's Aunt, Meryl Ochoa, Rachel Frederick, Leah Rantalla, Taylor's Dad, Heather, Darlene Loewen, Ren Reid, Sara Allison, Taylor's Uncle, Alexandra Chubaty Boychuck, Chris Murillo, and Abby Loewen for their help with the opening video</p>
     <p class="ntsthanks"> Another huge thank you goes out to the National Theatre School of Canada for supporting this project through their ArtApart program!</p>
     </div>
@@ -84,6 +83,7 @@
   font-weight: bold;}
 .specialthanks{
   background-color:#ffffff;
+  padding: 10px;
   }
 .ntsthanks{
   font-size:16px}
@@ -121,6 +121,7 @@ function nextVideo(){
     // Last video
     
     document.getElementById("nextButton").style.display = "initial"
+    document.getElementById("nextButton").style.display = "block"
     document.getElementById("nextButton").innerHTML = "Take Another Walk"
     return "xNN7iTA57jM"
   }
