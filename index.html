@@ -4,10 +4,33 @@
 
 </head>
 <body>
-
-<iframe id="video" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<button id="nextButton">Next</button>
+<div class="big">
+<h1 class="title">The Forest Of Us</h1>
+<button class="btton" id="nextButton">Start your Walk</button><br>
+<iframe class="video" id="video" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<button class="btton" id="nextButton">Start your Walk</button>
+<div class="addvideo">
+<p> Hello! Do you want to join the forest? We'd love to have you! Joining is easy, take a video of telling your story, and however you want. Whatever that means to you is perfect. If you need a little more help with what to do check out the video below. <br>Once you have it finished, upload it to the google form below!</p>
+</div>
+<button class="btton" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSchf8e6HraOX2deggkWwtfVLY5FI7i6nRTb2chbtVGOyGXhag/viewform?usp=sf_link', '_blank');return false;">Upload Your Video Here</button>
+</div>
+<style>
+.big{
+  margin: auto;
+  width: 80%;}
+.title{
+  text-align: center;}
+.btton{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;}
+.video{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;}
+.addvideo{
+  text-align: center;}
+</style>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 
@@ -16,10 +39,10 @@ var watchedVideos = {};
 var tree = "";
 var treeCount = 0;
 
-var firstVideo = "https://www.youtube.com/embed/xNN7iTA57jM?enablejsapi=1"
-var allTrees = ["https://www.youtube.com/embed/ei63l74d2SU?enablejsapi=1","https://www.youtube.com/embed/UA6Aku10nPo?enablejsapi=1","https://www.youtube.com/embed/espl4s36T3I?enablejsapi=1","https://www.youtube.com/embed/aTcj3Q2Y6Bk?enablejsapi=1","https://www.youtube.com/embed/e9dKQtpbP6o?enablejsapi=1","https://www.youtube.com/embed/qiEqirYypZs?enablejsapi=1","https://www.youtube.com/embed/wNHdZeucb9g?enablejsapi=1","https://www.youtube.com/embed/OOHk1gULkMM?enablejsapi=1","https://www.youtube.com/embed/CeHxIjr0xIw?enablejsapi=1","https://www.youtube.com/embed/GmoVQi6kg7k?enablejsapi=1","https://www.youtube.com/embed/kbbUTOujKZA?enablejsapi=1","https://www.youtube.com/embed/coNJ3lEisHM?enablejsapi=1","https://www.youtube.com/embed/alU8maHouhA?enablejsapi=1","https://www.youtube.com/embed/-yEXN7-vt00?enablejsapi=1","https://www.youtube.com/embed/Ip46WP_kKtM?enablejsapi=1","https://www.youtube.com/embed/MgqScB8Mzvw?enablejsapi=1","https://www.youtube.com/embed/IypPSDdF-3c?enablejsapi=1","https://www.youtube.com/embed/opxDgcVkcvE?enablejsapi=1","https://www.youtube.com/embed/UeAFwfgOBbs?enablejsapi=1","https://www.youtube.com/embed/cOtVZwhz1cg?enablejsapi=1","https://www.youtube.com/embed/eaBGpcKDs3g?enablejsapi=1","https://www.youtube.com/embed/oCPFDze0L8c?enablejsapi=1","https://www.youtube.com/embed/QRQLne4RNUw?enablejsapi=1","https://www.youtube.com/embed/DCfCVsusK5M?enablejsapi=1","https://www.youtube.com/embed/osgijZULgUo?enablejsapi=1"]
+var firstVideo = "https://www.youtube.com/embed/XSTRBHTGIBE?controls=0&enablejsapi=1"
+var allTrees = ["https://www.youtube.com/embed/xIBRPzu-da8?enablejsapi=1","https://www.youtube.com/embed/vKG6qITGtnc?enablejsapi=1","https://www.youtube.com/embed/W0EluCRDTCs?enablejsapi=1","https://www.youtube.com/embed/PCoJ5uf0SEc?enablejsapi=1","https://www.youtube.com/embed/N_KuZUPEQXY?enablejsapi=1","https://www.youtube.com/embed/qiEqirYypZs?enablejsapi=1","https://www.youtube.com/embed/wNHdZeucb9g?enablejsapi=1","https://www.youtube.com/embed/OOHk1gULkMM?enablejsapi=1","https://www.youtube.com/embed/CeHxIjr0xIw?enablejsapi=1","https://www.youtube.com/embed/GmoVQi6kg7k?enablejsapi=1","https://www.youtube.com/embed/kbbUTOujKZA?enablejsapi=1","https://www.youtube.com/embed/coNJ3lEisHM?enablejsapi=1","https://www.youtube.com/embed/alU8maHouhA?enablejsapi=1","https://www.youtube.com/embed/-yEXN7-vt00?enablejsapi=1","https://www.youtube.com/embed/Ip46WP_kKtM?enablejsapi=1","https://www.youtube.com/embed/MgqScB8Mzvw?enablejsapi=1","https://www.youtube.com/embed/IypPSDdF-3c?enablejsapi=1","https://www.youtube.com/embed/opxDgcVkcvE?enablejsapi=1","https://www.youtube.com/embed/UeAFwfgOBbs?enablejsapi=1","https://www.youtube.com/embed/cOtVZwhz1cg?enablejsapi=1","https://www.youtube.com/embed/eaBGpcKDs3g?enablejsapi=1","https://www.youtube.com/embed/oCPFDze0L8c?enablejsapi=1","https://www.youtube.com/embed/QRQLne4RNUw?enablejsapi=1","https://www.youtube.com/embed/DCfCVsusK5M?enablejsapi=1","https://www.youtube.com/embed/osgijZULgUo?enablejsapi=1"]
 
-var allTreesId = ["ei63l74d2SU","UA6Aku10nPo","espl4s36T3I","aTcj3Q2Y6Bk","e9dKQtpbP6o","qiEqirYypZs","wNHdZeucb9g","OOHk1gULkMM","CeHxIjr0xIw","GmoVQi6kg7k","kbbUTOujKZA","coNJ3lEisHM","alU8maHouhA","-yEXN7-vt00","Ip46WP_kKtM","MgqScB8Mzvw","IypPSDdF-3c","opxDgcVkcvE","UeAFwfgOBbs","cOtVZwhz1cg","eaBGpcKDs3g","oCPFDze0L8c","QRQLne4RNUw","DCfCVsusK5M","osgijZULgUo"]
+var allTreesId = ["xIBRPzu-da8","vKG6qITGtnc","W0EluCRDTCs","PCoJ5uf0SEc","N_KuZUPEQXY","qiEqirYypZs","wNHdZeucb9g","OOHk1gULkMM","CeHxIjr0xIw","GmoVQi6kg7k","kbbUTOujKZA","coNJ3lEisHM","alU8maHouhA","-yEXN7-vt00","Ip46WP_kKtM","MgqScB8Mzvw","IypPSDdF-3c","opxDgcVkcvE","UeAFwfgOBbs","cOtVZwhz1cg","eaBGpcKDs3g","oCPFDze0L8c","QRQLne4RNUw","DCfCVsusK5M","osgijZULgUo"]
 
 // Set first video by hand
 var element2 = document.getElementById("video")
