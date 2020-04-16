@@ -101,9 +101,9 @@ var watchedVideos = {};
 var tree = "";
 var treeCount = 0;
 
-var firstVideo = "https://www.youtube.com/embed/qDzbSazvTmQ?controls=0&enablejsapi=1"
+var firstVideo = "https://www.youtube.com/embed/qDzbSazvTmQ?controls=0&enablejsapi=1&rel=0&modestbranding=1"
 
-var allTreesId = ["xIBRPzu-da8","vKG6qITGtnc","W0EluCRDTCs","PCoJ5uf0SEc","N_KuZUPEQXY","_5x7U0gSYFk","Cp8lLA2EXDc","aoBkVFTZUFI"]
+var allTreesId = ["qDzbSazvTmQ","xIBRPzu-da8","vKG6qITGtnc","W0EluCRDTCs","PCoJ5uf0SEc","N_KuZUPEQXY","_5x7U0gSYFk","Cp8lLA2EXDc","aoBkVFTZUFI","ADthZNOYeI0","uVvZVmV87wQ"]
 
 // Set first video by hand
 var element2 = document.getElementById("video")
@@ -112,7 +112,7 @@ element2.src = firstVideo
 
 function nextVideo(){
   while (tree in watchedVideos || !watchCount && !tree) {
-    treeCount = Math.floor(Math.random() * (allTreesId.length))
+    treeCount = Math.floor(Math.random() * ((allTreesId.length)-1))+1
     tree = allTreesId[treeCount]
   }
   watchedVideos[tree] = 1
