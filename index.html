@@ -1,156 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Skranji' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Overlock' rel='stylesheet'>
-
-
-
-
-
-<style>
-  body {
-  background-image: url('27059.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  background-size: cover;
-}
-  h1{
-    font-family: 'Skranji','sans-serif';
-    color: #13446d;
-    font-size: 3em;
-  }
-.topper{
-  display:flex;
-  justify-content: center;
-  padding-bottom: 10px;
-  align-items: center}
-img{
-  width:15%;
-  height: 10%}
-b{
-font-family: 'Skranji','sans-serif';
-}
-A{color:black}
-  p{
-    font-family: 'Overlock','sans-serif';
-  }
-.biggest{
-  margin:auto;
-  padding-top: 10px;
-  padding-left: 10%;
-  padding-right: 10%}
-.bigger{
-  margin: auto;}
-.big{
-  margin: auto;
-  padding: 20px;}
-.title{
-  text-align: center;
-  padding-top: 6%;
-  margin: 0}
-.buttonz{
-display:flex;
-flex-direction: column;
-}
-.btton{
-  background-color: rgba(18,67,108,0);
-  font-family: 'Skranji', sans-serif;
-  color: rgba(18,67,108,1);
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: underline;
-  font-size: 30px;
-  cursor: pointer;}
-h3{
-  font-family: 'Overlock', sans-serif;
-  color: rgba(18,67,108,1);
-  margin: 0;
-  text-align: center;}
-
-.video{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;}
-.addvideo{
-  text-align: center;
-  width:60%;
-  margin:auto;
-  font-size: 20px;
-  font-weight: bold;}
-.specialthanks{
-  background-color:rgba(255,255,255,0.8);
-  padding: 10px;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-top: 20px;
-  }
-.sthanks{
-  font-size:16px;}
-.ntsthanks{
-  font-size:18px}
-
-h2{
-  font-family: 'Skranji', sans-serif;
-  color: white;
-  padding-left: 15%;
-  padding-right: 15%;
-  margin: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-h2:hover{cursor:pointer}
-
-.copy{
-display:flex;
-flex-direction:column;}
-
-.copy5{
-  background-color:rgba(54,121,176,0.6);
-  text-align: right;
-}
-.copy4{
-  background-color:rgba(18,67,108,0.6);
-}
-.copy3{
-  background-color:rgba(54,121,176,0.6);
-  text-align: right;
-}
-.copy2{
-  background-color:rgba(18,67,108,0.6);
-}
-.copy1{
-  background-color:rgba(54,121,176,0.6);
-  text-align: right;
-}
-.copy0{
-  background-color:rgba(18,67,108,0.6);
-}
-
-.bottominfo{
-  color: black;
-  font-family: 'Overlock', sans-serif;
-  font-size: 14pt;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color:rgba(255,255,255,0.6);
-  margin: 0
-}
-.bottomlist{
-  color: black;
-  font-family: 'Overlock', sans-serif;
-  padding-left: 20%;
-  padding-right: 10%;
-  padding-top: 0px;
-  padding-bottom: 20px;
-  background-color:rgba(255,255,255,0.6);
-  margin: 0
-}
-
-
-</style>
 <link rel="icon" href="Forest of Us2 copy.png">
 <title>The Forest Of Us</title>
 </head>
@@ -226,6 +76,10 @@ flex-direction:column;}
 
 
 <style>
+img{
+  height: auto;
+  width: auto;
+}
   body {
   background-image: url('27059.jpg');
   background-repeat: no-repeat;
@@ -240,11 +94,10 @@ flex-direction:column;}
 .topper{
   display:flex;
   justify-content: center;
-  padding-bottom: 10px;
-  align-items: center}
+  padding-bottom: 10px}
 img{
   width:15%;
-  height: 10%}
+  height: auto}
 b{
 font-family: 'Skranji','sans-serif';
 }
@@ -383,7 +236,7 @@ var treeCount = 0;
 
 var firstVideo = "https://www.youtube.com/embed/fYQ9pPC3Bcw?controls=0&enablejsapi=1&rel=0&modestbranding=1"
 
-var allTreesId = ["fYQ9pPC3Bcw","xIBRPzu-da8","vKG6qITGtnc","W0EluCRDTCs","PCoJ5uf0SEc","N_KuZUPEQXY","_5x7U0gSYFk","Cp8lLA2EXDc","aoBkVFTZUFI","ADthZNOYeI0","uVvZVmV87wQ","-bpTgyUWOvc","l8dM7QEBjrA"]
+var allTreesId = ["xIBRPzu-da8","vKG6qITGtnc","W0EluCRDTCs","PCoJ5uf0SEc","N_KuZUPEQXY","_5x7U0gSYFk","Cp8lLA2EXDc","aoBkVFTZUFI","ADthZNOYeI0","uVvZVmV87wQ","-bpTgyUWOvc","l8dM7QEBjrA"]
 
 // Set first video by hand
 var element2 = document.getElementById("video")
@@ -392,7 +245,7 @@ element2.src = firstVideo
 
 function nextVideo(){
   while (tree in watchedVideos || !watchCount && !tree) {
-    treeCount = Math.floor(Math.random() * ((allTreesId.length)-1))+1
+    treeCount = Math.floor(Math.random() * ((allTreesId.length)))
     tree = allTreesId[treeCount]
   }
   watchedVideos[tree] = 1
@@ -400,6 +253,8 @@ function nextVideo(){
   tree = allTreesId[treeCount]
 
   console.log (tree)
+  console.log (treeCount)
+  console.log (watchCount)
 
   if (watchCount >= 7){
     // Last video
@@ -408,7 +263,7 @@ function nextVideo(){
     document.getElementById("nextButton").style.display = "block"
     document.getElementById("disappear").style.display = "block"
     document.getElementById("nextButton").innerHTML = "Take Another Walk"
-    return "EOETlWkf2qE"
+    return "kdHFHO1Qy9o"
   }
   if (watchCount > 0){
     document.getElementById("nextButton").style.display = "none"
@@ -455,12 +310,12 @@ var WhatForest = document.getElementById("whatforest")
 
 var anotherbutton = document.getElementById("nextButton")
 anotherbutton.addEventListener("click", function() {
-  watchCount = 1;
+  watchCount = 0;
   watchedVideos = {};
   tree = "";
   var vidId = nextVideo()
   console.log(vidId, "Loading")
-  ik_player.cueVideoById(vidId, 0)
+  ik_player.playVideo()
 })
 
 
